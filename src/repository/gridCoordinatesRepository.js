@@ -1,4 +1,4 @@
-import GridCoordinates from "../model/GridCoordinates.js";
+import GridCoordinates from "../model/gridCoordinates.js";
 
 class GridCoordinatesRepository {
   async findAll() {

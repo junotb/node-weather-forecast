@@ -1,9 +1,9 @@
 import { Router } from "express";
-import GridCoordinatesController from "../controller/GridCoordinatesController.js";
+import { getGridCoordinates, getGridCoordinatesByGrid } from "../controller/gridCoordinatesController.js";
 
-const router = Router();
+const GridCoordinatesRoute = Router();
 
-router.get("/", GridCoordinatesController.getGridCoordinates);
-router.get("/:gridX/:gridY", GridCoordinatesController.getGridCoordinatesByGrid);
+GridCoordinatesRoute.get("/", getGridCoordinates);
+GridCoordinatesRoute.get("/:gridX/:gridY", getGridCoordinatesByGrid);
 
-export default router;
+export default GridCoordinatesRoute;

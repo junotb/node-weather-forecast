@@ -1,4 +1,4 @@
-import GridCoordinatesRepository from "../repository/GridCoordinatesRepository.js";
+import GridCoordinatesRepository from "../repository/gridCoordinatesRepository.js";
 
 class GridCoordinatesRepositoryService {
   async getGridCoordinates() {

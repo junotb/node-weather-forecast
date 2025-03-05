@@ -1,4 +1,4 @@
-import VilageFcstRepository from "../repository/VilageFcstRepository.js";
+import VilageFcstRepository from "../repository/vilageFcstRepository.js";
 
 class VilageFcstRepositoryService {
   async getVilageFcstByGrid(gridX, gridY) {

@@ -1,4 +1,4 @@
-import VilageFcst from "../model/VilageFcst.js";
+import VilageFcst from "../model/vilageFcst.js";
 
 class VilageFcstRepository {
   async findByGrid(gridX, gridY) {

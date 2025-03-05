@@ -1,4 +1,4 @@
-import vilageFcstService from "../service/VilageFcstService.js";
+import vilageFcstService from "../service/vilageFcstService.js";
 
 const getVilageFcstByGrid = async (req, res) => {
   try {
@@ -10,4 +10,4 @@ const getVilageFcstByGrid = async (req, res) => {
   }
 };
 
-export default { getVilageFcstByGrid };
+export { getVilageFcstByGrid };

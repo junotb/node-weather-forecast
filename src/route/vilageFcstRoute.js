@@ -1,8 +1,8 @@
 import { Router } from "express";
-import VilageFcstController from "../controller/VilageFcstController.js";
+import { getVilageFcstByGrid } from "../controller/vilageFcstController.js";
 
-const router = Router();
+const VilageFcstRoute = Router();
 
-router.get("/:gridX/:gridY", VilageFcstController.getVilageFcstByGrid);
+VilageFcstRoute.get("/:gridX/:gridY", getVilageFcstByGrid);
 
-export default router;
+export default VilageFcstRoute;

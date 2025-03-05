@@ -1,4 +1,4 @@
-import GridCoordinatesService from "../service/GridCoordinatesService.js";
+import GridCoordinatesService from "../service/gridCoordinatesService.js";
 
 const getGridCoordinates = async (req, res) => {
   try {
@@ -19,4 +19,4 @@ const getGridCoordinatesByGrid = async (req, res) => {
   }
 };
 
-export default { getGridCoordinates, getGridCoordinatesByGrid };
+export { getGridCoordinates, getGridCoordinatesByGrid };
