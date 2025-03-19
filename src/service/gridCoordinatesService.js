@@ -6,7 +6,9 @@ class GridCoordinatesRepositoryService {
   }
 
   async getGridCoordinatesByGrid(nx, ny) {
-    if (!nx || !ny) throw new Error("nx와 ny가 필요합니다.");
+    if (nx === undefined || ny === undefined || nx === null || ny === null) {
+      throw new Error("nx와 ny가 필요합니다.");
+    }
     return GridCoordinatesRepository.findByGrid(nx, ny);
   }
 }
