@@ -5,11 +5,11 @@ class GridCoordinatesRepositoryService {
     return GridCoordinatesRepository.findAll();
   }
 
-  async getGridCoordinatesByGrid(nx, ny) {
-    if (nx === undefined || ny === undefined || nx === null || ny === null) {
-      throw new Error("nx와 ny가 필요합니다.");
+  async getGridCoordinatesByGrid(gridX, gridY) {
+    if (gridX === undefined || gridY === undefined || gridX === null || gridY === null) {
+      throw new Error("gridX와 gridY가 필요합니다.");
     }
-    return GridCoordinatesRepository.findByGrid(nx, ny);
+    return GridCoordinatesRepository.findByGrid(gridX, gridY);
   }
 }
 
