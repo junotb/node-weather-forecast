@@ -1,11 +1,11 @@
 import VilageFcst from "../model/vilageFcst.js";
 
 class VilageFcstRepository {
-  async findByGrid(nx, ny) {
+  async findByGrid(gridX, gridY) {
     return VilageFcst.findAll({
       where: {
-        nx: nx,
-        ny: ny,
+        grid_x: gridX,
+        grid_y: gridY,
       },
     });
   }

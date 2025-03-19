@@ -11,8 +11,8 @@ const getGridCoordinates = async (req, res) => {
 
 const getGridCoordinatesByGrid = async (req, res) => {
   try {
-    const { nx, ny } = req.params;
-    const gridCoordinates = await GridCoordinatesService.getGridCoordinatesByGrid(nx, ny);
+    const { gridX, gridY } = req.params;
+    const gridCoordinates = await GridCoordinatesService.getGridCoordinatesByGrid(gridX, gridY);
     res.json(gridCoordinates);
   } catch (error) {
     res.status(500).json({ error: error.message });

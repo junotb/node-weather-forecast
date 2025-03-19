@@ -4,6 +4,6 @@ import { getGridCoordinates, getGridCoordinatesByGrid } from "../controller/grid
 const GridCoordinatesRoute = Router();
 
 GridCoordinatesRoute.get("/", getGridCoordinates);
-GridCoordinatesRoute.get("/:nx/:ny", getGridCoordinatesByGrid);
+GridCoordinatesRoute.get("/:gridX/:gridY", getGridCoordinatesByGrid);
 
 export default GridCoordinatesRoute;

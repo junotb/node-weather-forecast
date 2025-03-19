@@ -11,8 +11,8 @@ import sequelize from "../config/database.js";
  * @property {Date} fest_date
  * @property {string} fest_time
  * @property {number} fcst_value
- * @property {number} nx
- * @property {number} ny
+ * @property {number} grid_x
+ * @property {number} grid_y
  * @property {Date} created_at
  */
 const VilageFcst = sequelize.define(
@@ -48,11 +48,11 @@ const VilageFcst = sequelize.define(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
-    nx: {
+    grid_x: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    ny: {
+    grid_y: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
