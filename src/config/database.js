@@ -19,6 +19,9 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
   dialectModule: mysql2,
   port: DB_PORT,
   logging: false,
+  define: {
+    timestamps: false,
+  },
 });
 
 export default sequelize;
