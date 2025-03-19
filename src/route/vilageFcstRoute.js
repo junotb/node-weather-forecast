@@ -3,6 +3,6 @@ import { getVilageFcstByGrid } from "../controller/vilageFcstController.js";
 
 const VilageFcstRoute = Router();
 
-VilageFcstRoute.get("/:gridX/:gridY", getVilageFcstByGrid);
+VilageFcstRoute.get("/:nx/:ny", getVilageFcstByGrid);
 
 export default VilageFcstRoute;

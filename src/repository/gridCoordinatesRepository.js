@@ -5,11 +5,11 @@ class GridCoordinatesRepository {
     return GridCoordinates.findAll();
   }
   
-  async findByGrid(gridX, gridY) {
+  async findByGrid(nx, ny) {
     return GridCoordinates.findOne({
       where: {
-        grid_x: gridX,
-        grid_y: gridY,
+        nx: nx,
+        ny: ny,
       },
     });
   }

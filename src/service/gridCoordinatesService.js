@@ -5,9 +5,9 @@ class GridCoordinatesRepositoryService {
     return GridCoordinatesRepository.findAll();
   }
 
-  async getGridCoordinatesByGrid(gridX, gridY) {
-    if (!gridX || !gridY) throw new Error("gridX와 gridY가 필요합니다.");
-    return GridCoordinatesRepository.findByGrid(gridX, gridY);
+  async getGridCoordinatesByGrid(nx, ny) {
+    if (!nx || !ny) throw new Error("nx와 ny가 필요합니다.");
+    return GridCoordinatesRepository.findByGrid(nx, ny);
   }
 }
 
