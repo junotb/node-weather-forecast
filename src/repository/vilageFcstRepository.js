@@ -4,10 +4,14 @@ class VilageFcstRepository {
   async findByGrid(gridX, gridY) {
     return VilageFcst.findAll({
       where: {
-        grid_x: gridX,
-        grid_y: gridY,
+        nx: gridX,
+        ny: gridY,
       },
     });
+  }
+
+  async bulkCreate(vilageFcsts) {
+    return VilageFcst.bulkCreate(vilageFcsts);
   }
 }
 
