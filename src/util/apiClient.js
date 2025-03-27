@@ -10,7 +10,7 @@ const API_KEY_DEC = process.env.API_KEY_DEC;
  * 단기 예보 데이터를 요청
  * @returns 인스턴스 배열
  */
-export const requestVilageFcst = async () => {
+export const requestVilageFcst = async (gridX, gridY) => {
   // 한국 시간 (KST) 보장
   const now = new Date();
   const kstNow = new Date(Date.UTC(
@@ -46,8 +46,8 @@ export const requestVilageFcst = async () => {
           ? formatDate(new Date(kstNow.getTime() - 1 * 24 * 60 * 60 * 1000))
           : formatDate(kstNow),
         base_time: '0500',
-        nx: 60,
-        ny: 127,
+        nx: gridX,
+        ny: gridY,
       },
     });
 
