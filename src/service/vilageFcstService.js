@@ -1,20 +1,19 @@
 import VilageFcstRepository from "../repository/vilageFcstRepository.js";
+import { requestVilageFcst } from "../util/apiClient.js";
 
 class VilageFcstRepositoryService {
-  async fetchVilageFcst() {
-    const vilageFcst = await VilageFcstRepository.fetchVilageFcst();
-    return vilageFcst;
-  }
-
   async getVilageFcstByGrid(gridX, gridY) {
     if (gridX === undefined || gridY === undefined || gridX === null || gridY === null) {
       throw new Error("gridX와 gridY가 필요합니다.");
     }
-    return VilageFcstRepository.findByGrid(gridX, gridY);
-  }
 
-  async setVilageFcst() {
-    const vilageFcst = await VilageFcstRepository.findByGrid(gridX, gridY);
+    try {
+      const vilageFcsts = await requestVilageFcst(gridX, gridY);
+      await VilageFcstRepository.bulkCreate(vilageFcsts);
+    } catch (error) {
+      console.error(error);
+      throw new Error("일기예보 데이터 가져오기 실패");
+    }
   }
 }
 

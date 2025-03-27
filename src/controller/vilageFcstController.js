@@ -1,14 +1,5 @@
 import vilageFcstService from "../service/vilageFcstService.js";
 
-const fetchVilageFcst = async (req, res) => {
-  try {
-    const vilageFcst = await vilageFcstService.fetchVilageFcst();
-    res.json(vilageFcst);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
 const getVilageFcstByGrid = async (req, res) => {
   try {
     const { gridX, gridY } = req.params;
@@ -19,4 +10,4 @@ const getVilageFcstByGrid = async (req, res) => {
   }
 };
 
-export { fetchVilageFcst, getVilageFcstByGrid };
+export { getVilageFcstByGrid };

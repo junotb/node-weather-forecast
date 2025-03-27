@@ -4,16 +4,15 @@ import { syncDatabase } from "./model/index.js";
 import GridCoordinatesRoute from "./route/gridCoordinatesRoute.js";
 import VilageFcstRoute from "./route/vilageFcstRoute.js";
 
-// 환경변수 설정
+// 환경변수 로드
 dotenv.config();
 
-// 서버 실행
 const app = express();
 app.use(json());
 
 const initializeServer = async () => {
   try {
-    // 데이터베이스 동기화
+    // 데이터베이스 및 모델 동기화
     await syncDatabase();
     console.log("데이터베이스 동기화 완료");
 
@@ -37,7 +36,7 @@ const initializeServer = async () => {
     });
   } catch (error) {
     console.error("서버 실행 오류:", error);
-    process.exit(1); // 오류 발생 시 서버 종료
+    process.exit(1);
   }
 };
 

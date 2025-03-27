@@ -5,15 +5,14 @@ import sequelize from "../config/database.js";
  * 단기 예보 데이터
  * @typedef {Object} VilageFcst
  * @property {number} id
- * @property {Date} base_date
+ * @property {string} base_date
  * @property {string} base_time
  * @property {string} category
- * @property {Date} fest_date
- * @property {string} fest_time
+ * @property {string} fcst_date
+ * @property {string} fcst_time
  * @property {number} fcst_value
- * @property {number} grid_x
- * @property {number} grid_y
- * @property {Date} created_at
+ * @property {number} nx
+ * @property {number} ny
  */
 const VilageFcst = sequelize.define(
   "vilage_fcst",
@@ -25,7 +24,7 @@ const VilageFcst = sequelize.define(
       primaryKey: true,
     },
     base_date: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     base_time: {
@@ -36,11 +35,11 @@ const VilageFcst = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },  
-    fest_date: {
-      type: DataTypes.DATE,
+    fcst_date: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    fest_time: {
+    fcst_time: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -48,16 +47,12 @@ const VilageFcst = sequelize.define(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
-    grid_x: {
+    nx: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    grid_y: {
+    ny: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    created_at: {
-      type: DataTypes.DATE,
       allowNull: false,
     },
   },

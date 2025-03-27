@@ -74,22 +74,20 @@ export const requestVilageFcst = async () => {
     const instanceMap = new Map();
 
     fcstResponseItems.forEach((item) => {
-      const key = `${item.nx}_${item.ny}_${item.fcstDate}_${item.fcstTime}`;
+      const key = `${item.nx}_${item.ny}_${item.fcstDate}_${item.fcstTime}_${item.category}`;
 
       if (!instanceMap.has(key)) {
         instanceMap.set(key, {
           nx: item.nx,
           ny: item.ny,
-          fcstDate: item.fcstDate,
-          fcstTime: item.fcstTime,
-          fcstData: [],
+          base_date: item.baseDate,
+          base_time: item.baseTime,
+          fcst_date: item.fcstDate,
+          fcst_time: item.fcstTime,
+          category: item.category,
+          fcst_value: typeof item.fcstValue === 'number' ? item.fcstValue : 0,
         });
       }
-
-      instanceMap.get(key).fcstData.push({
-        category: item.category,
-        value: item.fcstValue,
-      });
     });
 
     // 인스턴스 배열로 변환
